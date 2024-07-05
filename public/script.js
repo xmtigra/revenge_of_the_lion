@@ -87,8 +87,9 @@ async function fetchData(sheetName) {
 }
 
 document.addEventListener('DOMContentLoaded', () => {
-  fetchData('Main');
-  fetchData('2022');
-  fetchData('2023');
-  fetchData('2024');
+  fetchData('Main').then(() => {
+    fetchData('2024');
+    fetchData('2023');
+    fetchData('2022');
+  });
 });
