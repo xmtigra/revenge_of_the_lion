@@ -57,3 +57,38 @@ document.addEventListener("DOMContentLoaded", function() {
   });
 
 });
+
+async function fetchData(sheetName) {
+  const response = await fetch(`https://script.google.com/macros/s/AKfycbxyea7dnlUheD5_mHe6ziDuUBaDNg691tu93t_NjVNaeS7pRmfsUKTbsyKYRzkYpom1/exec?sheet=${sheetName}`);
+  const data = await response.json();
+
+  if (sheetName === 'Main') {
+    document.getElementById('donate-link').setAttribute('href', data.donateLink);
+    document.getElementById('facebook-link').setAttribute('href', data.facebookLink);
+    document.getElementById('in-link').setAttribute('href', data.inLink);
+    document.getElementById('youtube-link').setAttribute('href', data.youtubeLink);
+    document.getElementById('instagram-link').setAttribute('href', data.instagramLink);
+    console.log(data)
+    document.getElementById('drones-total').innerText = data.drones;
+    document.getElementById('vehicles-total').innerText = data.vehicles;
+    document.getElementById('equipment-total').innerText = data.equipment;
+    document.getElementById('support-value-total').innerText = data.supportValue;
+  } else {
+    data.forEach((item, index) => {
+      if (index < 5) {
+        document.getElementById(`drones-${sheetName}`).innerText = data[0].count;
+        document.getElementById(`vehicles-${sheetName}`).innerText = data[1].count;
+        document.getElementById(`equipment-${sheetName}`).innerText = data[2].count;
+        document.getElementById(`support-value-${sheetName}`).innerText = data[3].count;
+        document.getElementById(`subsidy-${sheetName}`).innerText = data[4].count;
+      }
+    });
+  }
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+  fetchData('Main');
+  fetchData('2022');
+  fetchData('2023');
+  fetchData('2024');
+});
