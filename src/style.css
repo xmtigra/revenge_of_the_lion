@@ -262,3 +262,21 @@ body {
 [id^="report"] {
     display: none;
 }
+
+
+.dev-logo {
+    display: inline-block;
+    height: 30px;
+    vertical-align: middle;
+}
+
+.dev {
+    padding: 0.5rem 0;
+}
+
+.dev-link {
+    font-size: 1rem;
+    font-weight: 200;
+    color: #828282;
+    text-decoration: none;
+}
