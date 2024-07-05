@@ -284,3 +284,10 @@ body {
 .dev-link:hover .dev-logo  path {
     fill: #007672;
 }
+
+.dev-text {
+    font-size: 1rem;
+    font-weight: 200;
+    color: #828282;
+    vertical-align: middle;
+}
