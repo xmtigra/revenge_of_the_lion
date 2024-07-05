@@ -280,3 +280,7 @@ body {
     color: #828282;
     text-decoration: none;
 }
+
+.dev-link:hover .dev-logo  path {
+    fill: #007672;
+}
