@@ -68,19 +68,18 @@ async function fetchData(sheetName) {
     document.getElementById('in-link').setAttribute('href', data.inLink);
     document.getElementById('youtube-link').setAttribute('href', data.youtubeLink);
     document.getElementById('instagram-link').setAttribute('href', data.instagramLink);
-    console.log(data)
-    document.getElementById('drones-total').innerText = data.drones;
-    document.getElementById('vehicles-total').innerText = data.vehicles;
-    document.getElementById('equipment-total').innerText = data.equipment;
-    document.getElementById('support-value-total').innerText = data.supportValue;
+    document.getElementById('drones-total').innerText = Number(data.drones).toLocaleString('uk-UA');
+    document.getElementById('vehicles-total').innerText = Number(data.vehicles).toLocaleString('uk-UA');
+    document.getElementById('equipment-total').innerText = Number(data.equipment).toLocaleString('uk-UA');
+    document.getElementById('support-value-total').innerText = Number(data.supportValue).toLocaleString('uk-UA');
   } else {
     data.forEach((item, index) => {
       if (index < 5) {
-        document.getElementById(`drones-${sheetName}`).innerText = data[0].count;
-        document.getElementById(`vehicles-${sheetName}`).innerText = data[1].count;
-        document.getElementById(`equipment-${sheetName}`).innerText = data[2].count;
-        document.getElementById(`support-value-${sheetName}`).innerText = data[3].count;
-        document.getElementById(`subsidy-${sheetName}`).innerText = data[4].count;
+        document.getElementById(`drones-${sheetName}`).innerText = Number(data[0].count).toLocaleString('uk-UA');
+        document.getElementById(`vehicles-${sheetName}`).innerText = Number(data[1].count).toLocaleString('uk-UA');
+        document.getElementById(`equipment-${sheetName}`).innerText = Number(data[2].count).toLocaleString('uk-UA');
+        document.getElementById(`support-value-${sheetName}`).innerText = Number(data[3].count).toLocaleString('uk-UA');
+        document.getElementById(`subsidy-${sheetName}`).innerText = Number(data[4].count).toLocaleString('uk-UA');
       }
     });
   }

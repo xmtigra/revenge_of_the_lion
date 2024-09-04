@@ -46,35 +46,21 @@ body {
 
 .intro {
     padding: 3rem 0;
+    background: var(--primary-color);
+    color: #ffffff;
+    background: url("../img/intro-bg.jpg") no-repeat center center;
+    background-size: cover;
+    min-height: 650px;
 }
 
-.intro-img {
-    margin: 0 auto 3rem auto;
-    display: inline-block;
-}
-
-.intro-description {
-    font-weight: 800;
-    font-size: 3rem;
+.intro-title {
+    font-weight: 700;
+    font-size: 3.625rem;
+    line-height: 1.1em;
     text-align: center;
-    color: #525834;
-    margin-bottom: 3.125rem;
-    letter-spacing: 0.063rem;
-}
-
-.intro-go {
-    font-size: 2.5rem;
-    position: relative;
-    color: #525834;
-    text-decoration: none;
-    font-family: initial;
-    display: inline-block;
-    margin-bottom: 0.75rem;
-    animation: go-down 0.5s infinite;
-}
-
-.intro-go:hover {
-    cursor: pointer;
+    text-transform: uppercase;
+    max-width: 780px;
+    margin: 0 auto;
 }
 
 @keyframes go-down {
@@ -156,6 +142,14 @@ body {
     margin-bottom: 3rem;
 }
 
+.card-subtitle {
+    font-weight: 500;
+    font-size: 34px;
+    line-height: 32px;
+    text-transform: lowercase;
+    color: #000000;
+}
+
 
 .card-text {
     margin-left: 1rem;
@@ -170,14 +164,18 @@ body {
     padding: 11rem 0;
     text-align: center;
     margin-bottom: 2rem;
+    background: url("../img/fee-bg.jpg") no-repeat center center;
+    background-size: cover;
 }
 
 .fee-title {
+    font-weight: 100;
     font-size: 2rem;
-    font-weight: 800;
-    color: #525834;
-    margin-bottom: 3.125rem;
-    text-transform: uppercase;
+    line-height: 150%;
+    text-transform: lowercase;
+    margin-bottom: 1rem;
+    color: #000000;
+    text-align: center;
 }
 
 .fee-link {
@@ -187,15 +185,16 @@ body {
     font-weight: 800;
     padding: 0.875rem 1.5rem 0.875rem 1.5rem;
     border-radius: 0.5rem;
-    background: rgba(0, 0, 0, 1);
     box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     text-decoration: none;
+    background: #525834;
     color: #FFFFFF;
+    margin-bottom: 1rem;
 }
 
 .fee-link:hover {
-    background: #525834;
     color: #FFFFFF;
+    background: rgba(0, 0, 0, 1);
 }
 
 .footer-top {
@@ -248,14 +247,6 @@ body {
 @media (min-width: 991px) {
     .nav-link {
         margin-left: 4.375rem;
-    }
-
-    .intro-description {
-        font-size: 4.375rem;
-    }
-
-    .fee-title {
-        font-size: 3.75rem;
     }
 }
 
