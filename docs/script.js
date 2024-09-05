@@ -80,7 +80,6 @@ async function fetchData(sheetName) {
         document.getElementById(`vehicles-${sheetName}`).innerText = data[1].count;
         document.getElementById(`equipment-${sheetName}`).innerText = data[2].count;
         document.getElementById(`support-value-${sheetName}`).innerText = Number(data[3].count).toLocaleString('uk-UA');
-        document.getElementById(`subsidy-${sheetName}`).innerText = Number(data[4].count).toLocaleString('uk-UA');
       }
     });
   }
